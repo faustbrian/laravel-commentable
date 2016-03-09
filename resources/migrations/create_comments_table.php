@@ -12,9 +12,6 @@ use Kalnoy\Nestedset\NestedSet;
  */
 class CreateCommentsTable extends Migration
 {
-    /**
-     *
-     */
     public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
@@ -28,9 +25,6 @@ class CreateCommentsTable extends Migration
         });
     }
 
-    /**
-     *
-     */
     public function down()
     {
         Schema::dropIfExists('comments');
