@@ -1,15 +1,53 @@
 {
     "name": "draperstudio/laravel-commentable",
+    "type": "library",
     "description": "Commentable Polymorphic Eloquent Models for for Laravel 5",
+    "keywords": [
+        "draperstudio",
+        "laravel-commentable"
+    ],
+    "homepage": "https://github.com/DraperStudio/laravel-commentable",
+    "license": "MIT",
+    "authors": [{
+        "name": "DraperStudio",
+        "email": "hello@draperstudio.tech",
+        "homepage": "http://draperstudio.tech",
+        "role": "Developer"
+    }],
     "require": {
-        "php": ">=5.5.9",
-        "draperstudio/laravel-service-provider": "^1.0",
-        "illuminate/database": "5.1.*|5.2.*",
+        "php": "^5.6 || ^7.0",
+        "draperstudio/laravel-service-provider": "^0.1",
+        "illuminate/database": "5.1.* || 5.2.*",
         "kalnoy/nestedset": "^3.1|^4.0"
+    },
+    "require-dev": {
+        "graham-campbell/testbench": "^3.1",
+        "mockery/mockery": "^0.9.4",
+        "phpunit/phpunit": "^5.0",
+        "scrutinizer/ocular": "~1.1",
+        "squizlabs/php_codesniffer": "~2.3"
     },
     "autoload": {
         "psr-4": {
             "DraperStudio\\Commentable\\": "src/"
         }
-    }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DraperStudio\\Tests\\Commentable\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "preferred-install": "dist"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
