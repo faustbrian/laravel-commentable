@@ -11,7 +11,6 @@
 
 namespace DraperStudio\Commentable\Traits;
 
-use DraperStudio\Commentable\Models\Comment;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -21,12 +20,21 @@ use Illuminate\Database\Eloquent\Model;
  */
 trait Commentable
 {
+
+    /**
+     * @return string
+     */
+    public function commentable_model()
+    {
+        return config('commentable.model');
+    }
+
     /**
      * @return mixed
      */
     public function comments()
     {
-        return $this->morphMany(Comment::class, 'commentable');
+        return $this->morphMany($this->commentable_model(), 'commentable');
     }
 
     /**
@@ -38,7 +46,9 @@ trait Commentable
      */
     public function comment($data, Model $creator, Model $parent = null)
     {
-        $comment = (new Comment())->createComment($this, $data, $creator);
+        $commentableModel = $this->commentable_model();
+
+        $comment = (new $commentableModel)->createComment($this, $data, $creator);
 
         if (!empty($parent)) {
             $comment->appendTo($parent)->save();
@@ -56,7 +66,9 @@ trait Commentable
      */
     public function updateComment($id, $data, Model $parent = null)
     {
-        $comment = (new Comment())->updateComment($id, $data);
+        $commentableModel = $this->commentable_model();
+
+        $comment = (new $commentableModel)->updateComment($id, $data);
 
         if (!empty($parent)) {
             $comment->appendTo($parent)->save();
@@ -72,7 +84,9 @@ trait Commentable
      */
     public function deleteComment($id)
     {
-        return (new Comment())->deleteComment($id);
+        $commentableModel = $this->commentable_model();
+
+        return (new $commentableModel)->deleteComment($id);
     }
 
     /**
