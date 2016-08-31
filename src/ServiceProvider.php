@@ -26,10 +26,10 @@ class ServiceProvider extends \DraperStudio\ServiceProvider\ServiceProvider
         $this->publishMigrations();
 
         $this->publishes([
-            __DIR__ . '/../../../resources/config/commentable.php' => config_path('commentable.php')
+            __DIR__.'/../../../resources/config/commentable.php' => config_path('commentable.php'),
         ]);
 
-        $this->mergeConfigFrom(__DIR__ . '/../resources/config/commentable.php', 'commentable');
+        $this->mergeConfigFrom(__DIR__.'/../resources/config/commentable.php', 'commentable');
     }
 
     /**

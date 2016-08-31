@@ -20,7 +20,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 trait Commentable
 {
-
     /**
      * @return string
      */
@@ -48,7 +47,7 @@ trait Commentable
     {
         $commentableModel = $this->commentable_model();
 
-        $comment = (new $commentableModel)->createComment($this, $data, $creator);
+        $comment = (new $commentableModel())->createComment($this, $data, $creator);
 
         if (!empty($parent)) {
             $comment->appendTo($parent)->save();
@@ -68,7 +67,7 @@ trait Commentable
     {
         $commentableModel = $this->commentable_model();
 
-        $comment = (new $commentableModel)->updateComment($id, $data);
+        $comment = (new $commentableModel())->updateComment($id, $data);
 
         if (!empty($parent)) {
             $comment->appendTo($parent)->save();
@@ -86,7 +85,7 @@ trait Commentable
     {
         $commentableModel = $this->commentable_model();
 
-        return (new $commentableModel)->deleteComment($id);
+        return (new $commentableModel())->deleteComment($id);
     }
 
     /**
