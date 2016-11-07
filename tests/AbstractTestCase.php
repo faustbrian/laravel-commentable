@@ -9,7 +9,7 @@ abstract class AbstractTestCase extends AbstractPackageTestCase
     /**
      * Get the service provider class.
      *
-     * @param \Illuminate\Contracts\Foundation\Application $app
+     * @param \Illuminate\Interfaces\Foundation\Application $app
      *
      * @return string
      */

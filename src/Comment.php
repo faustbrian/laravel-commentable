@@ -1,6 +1,6 @@
 <?php
 
-namespace BrianFaust\Commentable\Models;
+namespace BrianFaust\Commentable;
 
 use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\Node;

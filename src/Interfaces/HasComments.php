@@ -1,10 +1,10 @@
 <?php
 
-namespace BrianFaust\Commentable\Contracts;
+namespace BrianFaust\Commentable\Interfaces;
 
 use Illuminate\Database\Eloquent\Model;
 
-interface Commentable
+interface HasComments
 {
     /**
      * @return mixed
