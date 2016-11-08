@@ -1,6 +1,6 @@
 <?php
 
-namespace BrianFaust\Commentable\Traits;
+namespace BrianFaust\Commentable;
 
 use Illuminate\Database\Eloquent\Model;
 
