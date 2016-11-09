@@ -86,7 +86,7 @@ $post->deleteComment(1);
 ``` php
 $post = Post::first();
 
-dd($post->getCommentCount());
+dd($post->commentCount());
 ```
 
 ## Security
