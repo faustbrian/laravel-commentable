@@ -11,12 +11,11 @@ $ composer require faustbrian/laravel-commentable
 And then include the service provider within `app/config/app.php`.
 
 ``` php
-'providers' => [
-    BrianFaust\Commentable\CommentableServiceProvider::class
-];
+BrianFaust\Commentable\CommentableServiceProvider::class
 ```
 
 To get started, you'll need to publish the vendor assets and migrate:
+
 ```
 php artisan vendor:publish --provider="BrianFaust\Commentable\CommentableServiceProvider" && php artisan migrate
 ```
