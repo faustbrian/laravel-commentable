@@ -13,11 +13,17 @@ class CommentableServiceProvider extends ServiceProvider
     {
         $this->publishMigrations();
 
-        $this->publishes([
-            __DIR__.'/../resources/config/commentable.php' => config_path('commentable.php'),
-        ]);
+        $this->publishConfig();
+    }
 
-        $this->mergeConfigFrom(__DIR__.'/../resources/config/commentable.php', 'commentable');
+    /**
+     * Register the application services.
+     */
+    public function register()
+    {
+        parent::register();
+
+        $this->mergeConfig();
     }
 
     /**
