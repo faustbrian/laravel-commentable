@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Laravel Commentable.
+ *
+ * (c) Brian Faust <hello@brianfaust.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace BrianFaust\Commentable;
 
 use Illuminate\Database\Eloquent\Model;
@@ -47,7 +56,7 @@ class Comment extends Node
     {
         $comment = new static();
         $comment->fill(array_merge($data, [
-            'creator_id' => $creator->id,
+            'creator_id'   => $creator->id,
             'creator_type' => get_class($creator),
         ]));
 
