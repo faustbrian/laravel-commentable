@@ -9,7 +9,7 @@
         "homepage": "https://brianfaust.de"
     }],
     "require": {
-        "php": "^7.0",
+        "php": "^7.1",
         "faustbrian/laravel-service-provider": "^1.0",
         "illuminate/database": "5.3.*",
         "kalnoy/nestedset": "^4.1"
