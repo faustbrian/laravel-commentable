@@ -22,9 +22,9 @@ declare(strict_types=1);
 
 namespace BrianFaust\Commentable;
 
-use BrianFaust\ServiceProvider\ServiceProvider;
+use BrianFaust\ServiceProvider\AbstractServiceProvider;
 
-class CommentableServiceProvider extends ServiceProvider
+class CommentableServiceProvider extends AbstractServiceProvider
 {
     /**
      * Bootstrap the application services.
