@@ -23,8 +23,8 @@ declare(strict_types=1);
 namespace BrianFaust\Commentable;
 
 use Illuminate\Database\Eloquent\Model;
-use Kalnoy\Nestedset\Node;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Kalnoy\Nestedset\Node;
 
 class Comment extends Node
 {
