@@ -24,7 +24,7 @@ namespace BrianFaust\Commentable;
 
 use Illuminate\Database\Eloquent\Model;
 
-trait HasCommentsTrait
+trait HasComments
 {
     /**
      * @return string
