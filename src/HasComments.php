@@ -23,13 +23,14 @@ declare(strict_types=1);
 namespace BrianFaust\Commentable;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait HasComments
 {
     /**
      * @return string
      */
-    public function commentable_model()
+    public function commentableModel(): string
     {
         return config('commentable.model');
     }
@@ -37,9 +38,9 @@ trait HasComments
     /**
      * @return mixed
      */
-    public function comments()
+    public function comments(): MorphMany
     {
-        return $this->morphMany($this->commentable_model(), 'commentable');
+        return $this->morphMany($this->commentableModel(), 'commentable');
     }
 
     /**
@@ -49,9 +50,9 @@ trait HasComments
      *
      * @return static
      */
-    public function comment($data, Model $creator, Model $parent = null)
+    public function comment($data, Model $creator, Model $parent = null): Comment
     {
-        $commentableModel = $this->commentable_model();
+        $commentableModel = $this->commentableModel();
 
         $comment = (new $commentableModel())->createComment($this, $data, $creator);
 
@@ -71,7 +72,7 @@ trait HasComments
      */
     public function updateComment($id, $data, Model $parent = null)
     {
-        $commentableModel = $this->commentable_model();
+        $commentableModel = $this->commentableModel();
 
         $comment = (new $commentableModel())->updateComment($id, $data);
 
@@ -87,17 +88,17 @@ trait HasComments
      *
      * @return mixed
      */
-    public function deleteComment($id)
+    public function deleteComment($id): bool
     {
-        $commentableModel = $this->commentable_model();
+        $commentableModel = $this->commentableModel();
 
-        return (new $commentableModel())->deleteComment($id);
+        return (bool) (new $commentableModel())->deleteComment($id);
     }
 
     /**
      * @return mixed
      */
-    public function commentCount()
+    public function commentCount(): int
     {
         return $this->comments->count();
     }

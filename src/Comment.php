@@ -24,6 +24,7 @@ namespace BrianFaust\Commentable;
 
 use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\Node;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Comment extends Node
 {
@@ -35,7 +36,7 @@ class Comment extends Node
     /**
      * @return bool
      */
-    public function hasChildren()
+    public function hasChildren(): bool
     {
         return $this->children()->count() > 0;
     }
@@ -43,7 +44,7 @@ class Comment extends Node
     /**
      * @return mixed
      */
-    public function commentable()
+    public function commentable(): MorphTo
     {
         return $this->morphTo();
     }
@@ -51,7 +52,7 @@ class Comment extends Node
     /**
      * @return mixed
      */
-    public function creator()
+    public function creator(): MorphTo
     {
         return $this->morphTo('creator');
     }
@@ -63,17 +64,15 @@ class Comment extends Node
      *
      * @return static
      */
-    public function createComment(Model $commentable, $data, Model $creator)
+    public function createComment(Model $commentable, $data, Model $creator): bool
     {
         $comment = new static();
-        $comment->fill(array_merge($data, [
+        $comment->forceFill(array_merge($data, [
             'creator_id'   => $creator->id,
             'creator_type' => get_class($creator),
         ]));
 
-        $commentable->comments()->save($comment);
-
-        return $comment;
+        return (bool) $commentable->comments()->save($comment);
     }
 
     /**
@@ -82,12 +81,9 @@ class Comment extends Node
      *
      * @return mixed
      */
-    public function updateComment($id, $data)
+    public function updateComment($id, $data): bool
     {
-        $comment = static::find($id);
-        $comment->update($data);
-
-        return $comment;
+        return (bool) static::find($id)->update($data);
     }
 
     /**
@@ -95,8 +91,8 @@ class Comment extends Node
      *
      * @return mixed
      */
-    public function deleteComment($id)
+    public function deleteComment($id): bool
     {
-        return static::find($id)->delete();
+        return (bool) static::find($id)->delete();
     }
 }
