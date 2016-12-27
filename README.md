@@ -29,12 +29,14 @@ php artisan vendor:publish --provider="BrianFaust\Commentable\CommentableService
 
 namespace App;
 
-use BrianFaust\Commentable\HasComments;
+
+use BrianFaust\Commentable\HasCommentsTrait;
+use BrianFaust\Commentable\Interfaces\HasComments;
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Post extends Model implements HasComments
 {
-    use HasComments;
+    use HasCommentsTrait;
 }
 ```
 
