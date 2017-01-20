@@ -11,7 +11,7 @@
     "require": {
         "php": "^7.1",
         "faustbrian/laravel-service-provider": "^1.0",
-        "illuminate/database": "5.3.*",
+        "illuminate/database": "5.3.* || 5.4.*",
         "kalnoy/nestedset": "^4.1"
     },
     "require-dev": {
