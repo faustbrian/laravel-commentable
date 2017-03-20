@@ -24,10 +24,12 @@ namespace BrianFaust\Commentable;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
-use Kalnoy\Nestedset\Node;
+use Kalnoy\Nestedset\NodeTrait;
 
-class Comment extends Node
+class Comment extends Model
 {
+    use NodeTrait;
+
     /**
      * @var array
      */
@@ -64,15 +66,12 @@ class Comment extends Node
      *
      * @return static
      */
-    public function createComment(Model $commentable, $data, Model $creator): bool
+    public function createComment(Model $commentable, $data, Model $creator): self
     {
-        $comment = new static();
-        $comment->forceFill(array_merge($data, [
+        return $commentable->comments()->create(array_merge($data, [
             'creator_id'   => $creator->id,
             'creator_type' => get_class($creator),
         ]));
-
-        return (bool) $commentable->comments()->save($comment);
     }
 
     /**
