@@ -49,7 +49,7 @@ trait HasComments
         $comment = (new $commentableModel())->createComment($this, $data, $creator);
 
         if (!empty($parent)) {
-            $comment->appendNode($parent);
+            $parent->appendNode($comment);
         }
 
         return $comment;
