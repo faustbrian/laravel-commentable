@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Laravel Commentable.
  *
@@ -12,7 +9,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace BrianFaust\Commentable;
+namespace BrianFaust\Commentable\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
@@ -61,7 +58,7 @@ class Comment extends Model
     public function createComment(Model $commentable, $data, Model $creator): self
     {
         return $commentable->comments()->create(array_merge($data, [
-            'creator_id'   => $creator->id,
+            'creator_id' => $creator->id,
             'creator_type' => get_class($creator),
         ]));
     }

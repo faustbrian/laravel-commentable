@@ -10,12 +10,6 @@ Require this package, with [Composer](https://getcomposer.org/), in the root dir
 $ composer require faustbrian/laravel-commentable
 ```
 
-And then include the service provider within `app/config/app.php`.
-
-``` php
-BrianFaust\Commentable\CommentableServiceProvider::class
-```
-
 To get started, you'll need to publish the vendor assets and migrate:
 
 ```
@@ -89,19 +83,11 @@ $post = Post::first();
 dd($post->commentCount());
 ```
 
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
-
 ## Testing
 
 ``` bash
 $ phpunit
 ```
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security
 

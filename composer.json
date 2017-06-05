@@ -9,15 +9,15 @@
         "homepage": "https://brianfaust.de"
     }],
     "require": {
-        "php": "^7.1",
-        "faustbrian/laravel-service-provider": "^1.0",
-        "illuminate/database": "5.3.* || 5.4.*",
+        "php": "^7.0",
+        "illuminate/support": "5.3.* || 5.4.* || 5.5.*",
+        "illuminate/database": "5.3.* || 5.4.* || 5.5.*",
         "kalnoy/nestedset": "^4.1"
     },
     "require-dev": {
-        "graham-campbell/testbench": "^3.2",
+        "graham-campbell/testbench": "^3.3",
         "mockery/mockery": "^0.9.5",
-        "phpunit/phpunit": "^5.6"
+        "phpunit/phpunit": "^6.1"
     },
     "autoload": {
         "psr-4": {
@@ -30,11 +30,17 @@
         }
     },
     "config": {
-        "preferred-install": "dist"
+        "preferred-install": "dist",
+        "sort-packages": true
     },
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "BrianFaust\\Commentable\\CommentableServiceProvider"
+            ]
         }
     },
     "minimum-stability": "dev",
