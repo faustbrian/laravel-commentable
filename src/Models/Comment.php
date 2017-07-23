@@ -11,9 +11,9 @@
 
 namespace BrianFaust\Commentable\Models;
 
+use Kalnoy\Nestedset\NodeTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
-use Kalnoy\Nestedset\NodeTrait;
 
 class Comment extends Model
 {

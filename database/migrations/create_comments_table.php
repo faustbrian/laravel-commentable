@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Kalnoy\Nestedset\NestedSet;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateCommentsTable extends Migration
 {
