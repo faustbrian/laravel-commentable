@@ -1,3 +1,3 @@
-preset: recommended
+preset: laravel
 
 linting: true
