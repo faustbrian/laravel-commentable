@@ -5,8 +5,8 @@
     "license": "MIT",
     "authors": [{
         "name": "Brian Faust",
-        "email": "hello@brianfaust.de",
-        "homepage": "https://brianfaust.de"
+        "email": "hello@brianfaust.me",
+        "homepage": "https://brianfaust.me"
     }],
     "require": {
         "php": "^7.0",
