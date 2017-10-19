@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace BrianFaust\Commentable\Traits;
 
+use BrianFaust\Commentable\Models\Comment;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
