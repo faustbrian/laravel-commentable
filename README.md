@@ -24,7 +24,7 @@ php artisan vendor:publish --provider="BrianFaust\Commentable\CommentableService
 namespace App;
 
 
-use BrianFaust\Commentable\HasComments;
+use BrianFaust\Commentable\Traits\HasComments;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
