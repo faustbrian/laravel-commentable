@@ -42,7 +42,7 @@ trait HasComments
      *
      * @return static
      */
-    public function comment($data, Model $creator, Model $parent = null): Comment
+    public function comment($data, Model $creator, Model $parent = null)
     {
         $commentableModel = $this->commentableModel();
 
