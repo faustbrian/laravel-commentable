@@ -9,9 +9,9 @@
         "homepage": "https://brianfaust.me"
     }],
     "require": {
-        "php": "^7.0",
-        "illuminate/support": "5.3.* || 5.4.* || 5.5.*",
-        "illuminate/database": "5.3.* || 5.4.* || 5.5.*",
+        "php": "^7.1",
+        "illuminate/support": "5.4.* || 5.5.*",
+        "illuminate/database": "5.4.* || 5.5.*",
         "kalnoy/nestedset": "^4.1"
     },
     "require-dev": {
