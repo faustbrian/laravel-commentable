@@ -13,9 +13,9 @@ declare(strict_types=1);
 
 namespace BrianFaust\Commentable\Models;
 
-use Kalnoy\Nestedset\NodeTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Kalnoy\Nestedset\NodeTrait;
 
 class Comment extends Model
 {
@@ -60,7 +60,7 @@ class Comment extends Model
     public function createComment(Model $commentable, $data, Model $creator): self
     {
         return $commentable->comments()->create(array_merge($data, [
-            'creator_id' => $creator->id,
+            'creator_id'   => $creator->id,
             'creator_type' => get_class($creator),
         ]));
     }

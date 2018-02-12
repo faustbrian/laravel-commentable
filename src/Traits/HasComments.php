@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace BrianFaust\Commentable\Traits;
 
-use Illuminate\Database\Eloquent\Model;
 use BrianFaust\Commentable\Models\Comment;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait HasComments
@@ -48,7 +48,7 @@ trait HasComments
 
         $comment = (new $commentableModel())->createComment($this, $data, $creator);
 
-        if (! empty($parent)) {
+        if (!empty($parent)) {
             $parent->appendNode($comment);
         }
 
@@ -68,7 +68,7 @@ trait HasComments
 
         $comment = (new $commentableModel())->updateComment($id, $data);
 
-        if (! empty($parent)) {
+        if (!empty($parent)) {
             $parent->appendNode($comment);
         }
 
