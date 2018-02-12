@@ -11,9 +11,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-use Kalnoy\Nestedset\NestedSet;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Kalnoy\Nestedset\NestedSet;
 
 class CreateCommentsTable extends Migration
 {
