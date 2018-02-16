@@ -1,5 +1,10 @@
 # Laravel Commentable
 
+[![Build Status](https://img.shields.io/travis/faustbrian/Laravel-Commentable/master.svg?style=flat-square)](https://travis-ci.org/faustbrian/Laravel-Commentable)
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/faustbrian/laravel-commentable.svg?style=flat-square)]()
+[![Latest Version](https://img.shields.io/github/release/faustbrian/Laravel-Commentable.svg?style=flat-square)](https://github.com/faustbrian/Laravel-Commentable/releases)
+[![License](https://img.shields.io/packagist/l/faustbrian/Laravel-Commentable.svg?style=flat-square)](https://packagist.org/packages/faustbrian/Laravel-Commentable)
+
 ## Installation
 
 Require this package, with [Composer](https://getcomposer.org/), in the root directory of your project.
@@ -89,7 +94,7 @@ $ phpunit
 
 ## Security
 
-If you discover a security vulnerability within this package, please send an e-mail to Brian Faust at hello@brianfaust.me. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this package, please send an e-mail to hello@brianfaust.me. All security vulnerabilities will be promptly addressed.
 
 ## Credits
 
