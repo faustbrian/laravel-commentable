@@ -60,7 +60,7 @@ class Comment extends Model
     public function createComment(Model $commentable, $data, Model $creator): self
     {
         return $commentable->comments()->create(array_merge($data, [
-            'creator_id'   => $creator->id,
+            'creator_id'   => $creator->getAuthIdentifier(),
             'creator_type' => get_class($creator),
         ]));
     }
