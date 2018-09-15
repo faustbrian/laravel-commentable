@@ -1,5 +1,5 @@
 {
-    "name": "faustbrian/laravel-commentable",
+    "name": "ktotheoz/laravel-commentable",
     "description": "Commentable Polymorphic Eloquent Models for for Laravel 5",
     "keywords": ["laravel", "framework", "Laravel-Commentable", "Laravel Commentable", "Brian Faust", "faustbrian"],
     "license": "MIT",
@@ -7,6 +7,10 @@
         "name": "Brian Faust",
         "email": "hello@brianfaust.me",
         "homepage": "https://brianfaust.me"
+    },{
+        "name": "Markus Naether",
+        "email": "naether.markus@gmail.com",
+        "homepage": ""
     }],
     "require": {
         "php": "^7.1",
