@@ -61,7 +61,7 @@ class Comment extends Model
     {
         return $commentable->comments()->create(array_merge($data, [
             'creator_id'   => $creator->getAuthIdentifier(),
-            'creator_type' => get_class($creator),
+            'creator_type' => $creator->getMorphClass(),
         ]));
     }
 
