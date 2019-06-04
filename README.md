@@ -1,22 +1,22 @@
 # Laravel Commentable
 
-[![Build Status](https://img.shields.io/travis/faustbrian/Laravel-Commentable/master.svg?style=flat-square)](https://travis-ci.org/faustbrian/Laravel-Commentable)
-[![PHP from Packagist](https://img.shields.io/packagist/php-v/faustbrian/laravel-commentable.svg?style=flat-square)]()
-[![Latest Version](https://img.shields.io/github/release/faustbrian/Laravel-Commentable.svg?style=flat-square)](https://github.com/faustbrian/Laravel-Commentable/releases)
-[![License](https://img.shields.io/packagist/l/faustbrian/Laravel-Commentable.svg?style=flat-square)](https://packagist.org/packages/faustbrian/Laravel-Commentable)
+[![Build Status](https://img.shields.io/travis/artisanry/Commentable/master.svg?style=flat-square)](https://travis-ci.org/artisanry/Commentable)
+[![PHP from Packagist](https://img.shields.io/packagist/php-v/artisanry/commentable.svg?style=flat-square)]()
+[![Latest Version](https://img.shields.io/github/release/artisanry/Commentable.svg?style=flat-square)](https://github.com/artisanry/Commentable/releases)
+[![License](https://img.shields.io/packagist/l/artisanry/Commentable.svg?style=flat-square)](https://packagist.org/packages/artisanry/Commentable)
 
 ## Installation
 
 Require this package, with [Composer](https://getcomposer.org/), in the root directory of your project.
 
 ``` bash
-$ composer require faustbrian/laravel-commentable
+$ composer require artisanry/commentable
 ```
 
 To get started, you'll need to publish the vendor assets and migrate:
 
 ```
-php artisan vendor:publish --provider="BrianFaust\Commentable\CommentableServiceProvider" && php artisan migrate
+php artisan vendor:publish --provider="Artisanry\Commentable\CommentableServiceProvider" && php artisan migrate
 ```
 
 ## Usage
@@ -29,7 +29,7 @@ php artisan vendor:publish --provider="BrianFaust\Commentable\CommentableService
 namespace App;
 
 
-use BrianFaust\Commentable\Traits\HasComments;
+use Artisanry\Commentable\Traits\HasComments;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
@@ -94,7 +94,7 @@ $ phpunit
 
 ## Security
 
-If you discover a security vulnerability within this package, please send an e-mail to hello@brianfaust.me. All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within this package, please send an e-mail to hello@basecode.sh. All security vulnerabilities will be promptly addressed.
 
 ## Credits
 
@@ -103,4 +103,4 @@ If you discover a security vulnerability within this package, please send an e-m
 
 ## License
 
-[MIT](LICENSE) © [Brian Faust](https://brianfaust.me)
+[MIT](LICENSE) © [Brian Faust](https://basecode.sh)
