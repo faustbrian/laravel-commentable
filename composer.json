@@ -1,17 +1,24 @@
 {
     "name": "artisanry/commentable",
     "description": "Commentable Polymorphic Eloquent Models for for Laravel 5",
-    "keywords": ["laravel", "framework", "Laravel-Commentable", "Laravel Commentable"],
+    "keywords": [
+        "laravel",
+        "framework",
+        "Laravel-Commentable",
+        "Laravel Commentable"
+    ],
     "license": "MIT",
-    "authors": [{
-        "name": "Brian Faust",
-        "email": "hello@basecode.sh",
-        "homepage": "https://basecode.sh"
-    }],
+    "authors": [
+        {
+            "name": "Brian Faust",
+            "email": "hello@basecode.sh",
+            "homepage": "https://basecode.sh"
+        }
+    ],
     "require": {
-        "php": "^7.1",
-        "illuminate/support": "^5.6",
-        "illuminate/database": "^5.6",
+        "php": "^7.2",
+        "illuminate/support": "^5.8",
+        "illuminate/database": "^5.8",
         "kalnoy/nestedset": "^4.1"
     },
     "require-dev": {
