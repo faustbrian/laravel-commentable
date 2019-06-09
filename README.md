@@ -98,9 +98,8 @@ If you discover a security vulnerability within this package, please send an e-m
 
 ## Credits
 
-- [Brian Faust](https://github.com/faustbrian)
-- [All Contributors](../../contributors)
+This project exists thanks to all the people who [contribute](../../contributors).
 
 ## License
 
-[MIT](LICENSE) © [Brian Faust](https://basecode.sh)
+Mozilla Public License Version 2.0 ([MPL-2.0](./LICENSE)).

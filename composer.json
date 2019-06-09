@@ -7,7 +7,7 @@
         "Laravel-Commentable",
         "Laravel Commentable"
     ],
-    "license": "MIT",
+    "license": "MPL-2.0",
     "authors": [
         {
             "name": "Brian Faust",
