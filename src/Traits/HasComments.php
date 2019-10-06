@@ -20,6 +20,8 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 trait HasComments
 {
     /**
+     * The name of the comments model.
+     *
      * @return string
      */
     public function commentableModel(): string
@@ -28,7 +30,9 @@ trait HasComments
     }
 
     /**
-     * @return mixed
+     * The comments attached to the model.
+     *
+     * @return MorphMany
      */
     public function comments(): MorphMany
     {
@@ -36,13 +40,15 @@ trait HasComments
     }
 
     /**
-     * @param $data
+     * Create a comment.
+     *
+     * @param array      $data
      * @param Model      $creator
      * @param Model|null $parent
      *
      * @return static
      */
-    public function comment($data, Model $creator, Model $parent = null)
+    public function comment(array $data, Model $creator, Model $parent = null)
     {
         $commentableModel = $this->commentableModel();
 
@@ -56,6 +62,8 @@ trait HasComments
     }
 
     /**
+     * Update a comment.
+     *
      * @param $id
      * @param $data
      * @param Model|null $parent
@@ -76,11 +84,13 @@ trait HasComments
     }
 
     /**
-     * @param $id
+     * Delete a comment.
+     *
+     * @param int $id
      *
      * @return mixed
      */
-    public function deleteComment($id): bool
+    public function deleteComment(int $id): bool
     {
         $commentableModel = $this->commentableModel();
 
@@ -88,6 +98,8 @@ trait HasComments
     }
 
     /**
+     * The amount of comments assigned to this model.
+     *
      * @return mixed
      */
     public function commentCount(): int

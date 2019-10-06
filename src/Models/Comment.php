@@ -22,11 +22,15 @@ class Comment extends Model
     use NodeTrait;
 
     /**
+     * The attributes that are not mass assignable.
+     *
      * @var array
      */
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
     /**
+     * Determine if a comment has child comments.
+     *
      * @return bool
      */
     public function hasChildren(): bool
@@ -35,6 +39,8 @@ class Comment extends Model
     }
 
     /**
+     * Get the commentable entity that the comment belongs to.
+     *
      * @return mixed
      */
     public function commentable(): MorphTo
@@ -51,13 +57,15 @@ class Comment extends Model
     }
 
     /**
+     * Create a comment and persists it.
+     *
      * @param Model $commentable
-     * @param $data
+     * @param array $data
      * @param Model $creator
      *
      * @return static
      */
-    public function createComment(Model $commentable, $data, Model $creator): self
+    public function createComment(Model $commentable, array $data, Model $creator): self
     {
         return $commentable->comments()->create(array_merge($data, [
             'creator_id'   => $creator->getAuthIdentifier(),
@@ -66,22 +74,26 @@ class Comment extends Model
     }
 
     /**
-     * @param $id
-     * @param $data
+     * Update a comment by an ID.
      *
-     * @return mixed
+     * @param int   $id
+     * @param array $data
+     *
+     * @return bool
      */
-    public function updateComment($id, $data): bool
+    public function updateComment(int $id, array $data): bool
     {
         return (bool) static::find($id)->update($data);
     }
 
     /**
-     * @param $id
+     * Delete a comment by an ID.
      *
-     * @return mixed
+     * @param int $id
+     *
+     * @return bool
      */
-    public function deleteComment($id): bool
+    public function deleteComment(int $id): bool
     {
         return (bool) static::find($id)->delete();
     }
