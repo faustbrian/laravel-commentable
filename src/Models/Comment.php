@@ -76,7 +76,7 @@ class Comment extends Model
     /**
      * Update a comment by an ID.
      *
-     * @param int $id
+     * @param int   $id
      * @param array $data
      *
      * @return bool
