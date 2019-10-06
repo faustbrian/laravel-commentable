@@ -21,7 +21,7 @@ trait HasComments
 {
     /**
      * The name of the comments model.
-     * 
+     *
      * @return string
      */
     public function commentableModel(): string
@@ -31,7 +31,7 @@ trait HasComments
 
     /**
      * The comments attached to the model.
-     * 
+     *
      * @return MorphMany
      */
     public function comments(): MorphMany
@@ -41,7 +41,7 @@ trait HasComments
 
     /**
      * Create a comment.
-     * 
+     *
      * @param array      $data
      * @param Model      $creator
      * @param Model|null $parent
@@ -63,7 +63,7 @@ trait HasComments
 
     /**
      * Update a comment.
-     * 
+     *
      * @param $id
      * @param $data
      * @param Model|null $parent
@@ -85,7 +85,7 @@ trait HasComments
 
     /**
      * Delete a comment.
-     * 
+     *
      * @param int $id
      *
      * @return mixed
@@ -99,7 +99,7 @@ trait HasComments
 
     /**
      * The amount of comments assigned to this model.
-     * 
+     *
      * @return mixed
      */
     public function commentCount(): int
