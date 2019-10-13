@@ -26,7 +26,7 @@ trait HasComments
      */
     public function commentableModel(): string
     {
-        return config('laravel-commentable.model');
+        return config('commentable.model');
     }
 
     /**

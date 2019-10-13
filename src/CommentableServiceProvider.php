@@ -27,7 +27,7 @@ class CommentableServiceProvider extends ServiceProvider
         ], 'migrations');
 
         $this->publishes([
-            __DIR__.'/../config/laravel-commentable.php' => config_path('laravel-commentable.php'),
+            __DIR__.'/../config/commentable.php' => config_path('commentable.php'),
         ], 'config');
     }
 
@@ -36,6 +36,6 @@ class CommentableServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/laravel-commentable.php', 'laravel-commentable');
+        $this->mergeConfigFrom(__DIR__.'/../config/commentable.php', 'commentable');
     }
 }
